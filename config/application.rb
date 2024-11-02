@@ -32,6 +32,18 @@ module MentalHealthSurveyApi
     # Use GUID for IDs
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
-    end    
+    end
+
+    # CORS Middleware
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "http://localhost:4200"
+        resource "*",
+          headers: :any,
+          methods: [:get, :post, :options],
+          expose: [],
+          max_age: 600
+      end
+    end
   end
 end
