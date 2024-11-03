@@ -1,6 +1,18 @@
 ## Mental Health Survey API
 
-### Setup
+### Docker Setup
+
+1. Build
+```bash
+docker build -t mental_health_survey_api .
+```
+
+2. Run
+```bash
+docker run -d -p 3000:3000 --name mental_health_survey_api -e SECRET_KEY_BASE=your_generated_secret_key_here mental_health_survey_api`
+```
+
+### Dev Setup
 1. Install dependencies:
 ```bash
 bundle install
@@ -25,7 +37,7 @@ bundle exec rspec
 ```
 
 ### Usage
-Submit a survey: Send a POST request to `/surveys` with JSON data in the format:
+To submit a survey, send a POST request to `http://localhost:3000/surveys` with JSON data in this format:
 ```json
 {
   "survey": {
@@ -35,34 +47,10 @@ Submit a survey: Send a POST request to `/surveys` with JSON data in the format:
   }
 }
 ```
-
-### Docker Build
-`docker build -t mental_health_survey_api .`
-
-### Docker Run
-`docker run -d -p 3000:3000 --name mental_health_survey_api -e SECRET_KEY_BASE=your_generated_secret_key_here mental_health_survey_api`
-
-#### README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To read the analysis, send a GET request to `http://localhost:3000/analysis`. It returns a JSON data in this format:
+```json
+{
+  "count": 0,
+  "average": 0
+}
+```
