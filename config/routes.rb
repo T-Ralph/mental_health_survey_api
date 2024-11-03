@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  # Resource Routes
+  # Routes
   resources :surveys, only: [:create]
+  get 'analysis', to: 'analysis#index'
 end

@@ -41,6 +41,9 @@ group :development, :test do
 
   # CORS
   gem 'rack-cors', require: 'rack/cors'
+
+  # FactoryBot
+  gem 'factory_bot_rails'
 end
 
 group :production do
