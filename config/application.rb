@@ -34,6 +34,11 @@ module MentalHealthSurveyApi
       g.orm :active_record, primary_key_type: :uuid
     end
 
+    # ActiveRecord Encryption
+    config.active_record.encryption.primary_key = "ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY"
+    config.active_record.encryption.deterministic_key = "ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY"
+    config.active_record.encryption.key_derivation_salt = "ACTIVE_RECORD_ENCRYPTION_SALT"
+
     # CORS Middleware
     config.middleware.insert_before 0, Rack::Cors do
       allow do

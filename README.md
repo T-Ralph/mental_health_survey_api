@@ -9,7 +9,7 @@ docker build -t mental_health_survey_api .
 
 2. Run
 ```bash
-docker run -d -p 3000:3000 --name mental_health_survey_api -e SECRET_KEY_BASE=your_generated_secret_key_here mental_health_survey_api`
+docker run -d -p 3000:3000 --name mental_health_survey_api -e SECRET_KEY_BASE=your_generated_secret_key_here mental_health_survey_api
 ```
 
 ### Dev Setup
@@ -20,7 +20,6 @@ bundle install
 
 2. Set up the database:
 ```bash
-rails db:create
 rails db:migrate
 ```
 
@@ -31,7 +30,6 @@ rails server
 
 4. Run the test:
 ```bash
-rails db:create RAILS_ENV=test 
 rails db:migrate RAILS_ENV=test
 bundle exec rspec
 ```
