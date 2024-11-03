@@ -25,7 +25,7 @@ bundle exec rspec
 ```
 
 ### Usage
-Submit a survey: Send a POST request to /surveys with JSON data in the format:
+Submit a survey: Send a POST request to `/surveys` with JSON data in the format:
 ```json
 {
   "survey": {
@@ -35,6 +35,12 @@ Submit a survey: Send a POST request to /surveys with JSON data in the format:
   }
 }
 ```
+
+### Docker Build
+`docker build -t mental_health_survey_api .`
+
+### Docker Run
+`docker run -d -p 3000:3000 --name mental_health_survey_api -e SECRET_KEY_BASE=your_generated_secret_key_here mental_health_survey_api`
 
 #### README
 

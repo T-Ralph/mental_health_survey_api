@@ -43,6 +43,10 @@ group :development, :test do
   gem 'rack-cors', require: 'rack/cors'
 end
 
+group :production do
+  # CORS
+  gem 'rack-cors', require: 'rack/cors'
+end
 
 
 gem "rspec-rails", "~> 7.0"
